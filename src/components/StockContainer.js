@@ -1,11 +1,11 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer({ marketStocks, moveToPortfolio }) {
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+        { marketStocks ? marketStocks.map(stock => <Stock key={stock.id} stock={stock} onStockClick={moveToPortfolio} />) : null }
     </div>
   );
 }
